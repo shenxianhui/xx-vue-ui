@@ -1,0 +1,143 @@
+/*
+ * @Author: Wells
+ * @Date: 2019-11-18 10:06:42
+ * @LastEditors: shenxh
+ * @LastEditTime: 2020-09-21 17:51:37
+ * @Description: 通用样式
+ */
+/* 引入处理兼容性的公共样式 */
+@import 'normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+html {
+  width: 100vw;
+  height: 100vh;
+  // font-size: 100 / 750 * 2 * 100vw; // 根字体(通常750px设计稿为100px) / 设计稿尺寸 * 2 * 100vw
+  overflow: hidden;
+  user-select: none; // 禁用页面内容选中和复制操作
+  -webkit-overflow-scrolling: touch; /* Safari 平滑滚动 */
+  /* 滚动条样式 */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background-color: #eee;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #aaa;
+    min-width: 150px;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:vertical:hover {
+    background: #555555;
+  }
+  ::-webkit-scrollbar-thumb:horizontal:hover {
+    background: #555555;
+  }
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  // font-size: 0.14rem;
+  font-size: 14px;
+  color: #000;
+  background: #fff;
+  overflow: auto;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+input {
+  outline: none;
+  border: none;
+  padding: 0; /* 解决 Safari 端内容遮盖问题 */
+  -webkit-appearance: none; /* 去除 Safari 输入框默认样式 */
+  color: #333333;
+  &::-webkit-input-placeholder {
+    color: #c6c6c6;
+  }
+  &:focus {
+    color: #333;
+  }
+}
+textarea {
+  border: 0;
+  outline: none;
+}
+button,
+div,
+span,
+img {
+  outline: none;
+}
+i {
+  font-style: normal;
+  outline: none;
+}
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited {
+  color: #333;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+table {
+  border-collapse: collapse; /* 合并边框 */
+}
+/* 文字溢出后出现省略号 */
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-content {
+  position: relative;
+  height: calc(100% - 30px);
+  padding: 20px;
+  margin: 10px 20px 20px;
+  border-radius: 6px;
+  overflow: auto;
+  border: 1px solid #eee;
+  box-shadow: 5px 5px 10px 5px #dfdfdf;
+  background-color: #fff;
+  z-index: 1;
+}
+.admin-table {
+  user-select: text; /* 禁用页面内容选中和复制操作 */
+  /deep/ table {
+    thead {
+      tr {
+        th {
+          padding: 10px 0;
+          background-color: #fafafa;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding: 5px 0;
+        }
+      }
+    }
+  }
+}
